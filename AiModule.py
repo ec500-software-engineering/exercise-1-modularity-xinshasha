@@ -1,4 +1,4 @@
-#copyright @Xiang Li
+#Copyright @Xiang Li
 import random
 
 
