@@ -1,4 +1,4 @@
-#copyright @Xinsha Wang
+#Copyright @Xinsha Wang
 #It's the I/O documentation for Alert System
 #Alert Sys
 class Alert():
