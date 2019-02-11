@@ -19,5 +19,4 @@ def read_data(path):
         return value
     except:
         print("Error:No input data\n")
-
         

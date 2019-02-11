@@ -18,13 +18,11 @@ for i in data:
 	alert_sys.get_bo_data(i.read('bo'))
 	alert_sys.get_bp_data(i.read('bp'))
 	alert_sys.get_pul_data(i.read('pul'))
-#UI
 UserInterface_module.alert_out(alert_sys.Alert_Output())
 #AI
 ai = AiModule.AiModule()
 ai.input_check(bo,bp,pul)
 pbo,pbp,ppul=ai.predict()
-#UI
 UserInterface_module.ai_output(pbo,pbp,ppul)
 
 
