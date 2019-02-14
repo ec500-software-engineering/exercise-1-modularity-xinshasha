@@ -9,8 +9,6 @@ def read_data(path):
                 if data:
                     time.append(data[0])
                     value.append(float(data[1]))
-                    
-
                 else:
                     print("Empty data file!\n")
                     return 2
@@ -20,3 +18,6 @@ def read_data(path):
     except:
         print("Error:No input data\n")
         
+
+
+
