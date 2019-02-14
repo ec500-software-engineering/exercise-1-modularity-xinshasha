@@ -2,9 +2,7 @@ import Input_Module_lkn
 import storage
 import Alert_module
 import AiModule
-import UserInterface_module
 import threading
-import queue
 import time
 class inputThread(threading.Thread):
     def __init__(self,tName,Inqueue,Outqueue):
@@ -17,7 +15,7 @@ class inputThread(threading.Thread):
         self.pul= []
         self.thread_stop = False
     def run(self):
-      while self.thread_stop == False:
+      while self.thread_stop is False:
         try:
           path = self.Inqueue.get()
           if path == 'quit':
@@ -35,7 +33,7 @@ class inputThread(threading.Thread):
             self.Outqueue.put(['pul',self.pul])
           else:
             print("Wrong Input")
-        except:
+        except BaseException:
           pass
 
 
@@ -54,7 +52,7 @@ class Data_Process(threading.Thread):
     bp = []
     bo = []
     pul = []
-    while self.thread_stop == False:
+    while self.thread_stop is False:
       try:
         data = self.Inqueue.get()
         if data == 'quit':
@@ -95,7 +93,7 @@ class Data_Process(threading.Thread):
         else:
           print("Wating For Complete.")
           time.sleep(1)
-      except:
+      except BaseException:
         print("Waiting for input")
         time.sleep(3)
 
@@ -106,7 +104,7 @@ class OutThread(threading.Thread):
     self.Inqueue = Inqueue
     self.thread_stop = False
   def run(self):
-    while self.thread_stop == False:
+    while self.thread_stop is False:
       try:
         d = self.Inqueue.get()
         if d == 'quit':
@@ -127,5 +125,5 @@ class OutThread(threading.Thread):
           elif alert_number == 3:
             print("PUL Alert!")
 
-      except:
-        time,sleep(1)
+      except BaseException:
+        time.sleep(1)

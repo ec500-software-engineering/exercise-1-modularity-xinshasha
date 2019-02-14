@@ -15,7 +15,7 @@ def read_data(path):
                 data = f.readline().split()
         print("Read data successfully\n")
         return value
-    except:
+    except BaseException:
         print("Error:No input data\n")
         
 
